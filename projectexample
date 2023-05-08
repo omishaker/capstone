@@ -1,0 +1,25 @@
+#!/bin/bash
+#========================================
+# Name:     Omar Shaker
+# Date:     4/21/23
+# Purpose:  Capstone Project 
+#========================================
+while true; do 
+ clear
+ tput cup 3 12; echo "Welcome to the Patient Management System of Hospital Unix"
+ tput cup 4 12; echo "========================================================="
+ tput cup 6 15; echo "[L/l] List Patients"
+ tput cup 7 15; echo "[A/a] Add a New Patient"
+ tput cup 8 15; echo "[S/s] Search Patient"
+ tput cup 9 15; echo "[D/d] Delete Patient"
+ tput cup 10 15; echo "[E/e] Exit"
+read choice || continue
+case $choice in
+ [Ll]) ./listPatient.sh ;; 
+ [Aa]) ./addPatient.sh ;; 
+ [Ss]) ./searchPatient.sh ;; 
+ [Dd]) ./deletePatient.sh ;; 
+ [Ee]) echo "Thanks for using this app." clear ; exit ;; 
+ esac
+read -p "Press enter to continue."
+done 
